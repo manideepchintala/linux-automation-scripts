@@ -18,7 +18,7 @@ Bash, Linux (Ubuntu / Amazon Linux), cron, systemd (`systemctl`), Git
 ## Usage
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/linux-automation-scripts.git
+git clone https://github.com/manideepchintala/linux-automation-scripts.git
 cd linux-automation-scripts
 chmod +x *.sh
 
