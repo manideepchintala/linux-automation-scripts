@@ -1,0 +1,11 @@
+# Edit your crontab with: crontab -e
+# Format: minute hour day-of-month month day-of-week command
+
+# Health check every 15 minutes
+*/15 * * * * /home/ubuntu/linux-automation-scripts/health_check.sh ssh cron >> /home/ubuntu/health_logs/cron.log 2>&1
+
+# Disk usage alert every hour (alert at 85%)
+0 * * * * /home/ubuntu/linux-automation-scripts/disk_alert.sh 85 >> /home/ubuntu/health_logs/disk_alert.log 2>&1
+
+# Delete .log files older than 7 days, every day at 2:00 AM
+0 2 * * * /home/ubuntu/linux-automation-scripts/log_cleanup.sh /home/ubuntu/health_logs 7 >> /home/ubuntu/health_logs/cleanup.log 2>&1
